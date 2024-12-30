@@ -1,6 +1,2 @@
-sqlalchemy
-mysql-connector-python
-pymysql
-python-dotenv
+flask
 pytubefix
-psutil
