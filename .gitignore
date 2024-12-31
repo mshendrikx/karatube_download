@@ -1,2 +1,5 @@
 .env
 .venv
+test.py
+test1.py
+build.sh

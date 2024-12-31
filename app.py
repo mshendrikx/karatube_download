@@ -9,10 +9,10 @@ app = Flask(__name__)
 def youtube_download(youtubeid):
 
     video_file = str(youtubeid) + ".mp4"
-    filename = "/app/download/" + video_file
+    file_path = '/app/download'
     download_url = YT_BASE_URL + str(youtubeid)
     try:
-        YouTube(download_url).streams.first().download(filename=filename)
+        YouTube(download_url).streams.first().download(output_path=file_path, filename=video_file)
         downloaded = 1
         error_string = ''
     except Exception as e:
@@ -24,4 +24,7 @@ def youtube_download(youtubeid):
     }
     
     return jsonify(dados)
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=7006)
         
